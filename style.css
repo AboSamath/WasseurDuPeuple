@@ -1,0 +1,82 @@
+:root{
+  --bg:#22262f;
+  --bg-deep:#16181e;
+  --panel:#292e37;
+  --panel-soft:#30353f;
+  --gold:#f1a02a;
+  --gold-dark:#bf8021;
+  --cream:#f7f0e4;
+  --muted:#aeb3bc;
+  --line:rgba(241,160,42,.28);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:radial-gradient(circle at 50% 0%,#353b47 0%,var(--bg) 36%,var(--bg-deep) 100%);
+  color:var(--cream);
+  font-family:"DM Sans",system-ui,sans-serif;
+}
+.menu-shell{width:min(100%,760px);margin:auto;min-height:100vh;padding:0 22px 44px}
+.hero{text-align:center;padding:64px 18px 40px;position:relative;overflow:hidden}
+.hero-glow{position:absolute;width:280px;height:280px;border-radius:50%;background:rgba(241,160,42,.12);filter:blur(65px);left:50%;top:-100px;transform:translateX(-50%)}
+.brand-mark{
+  display:inline-flex;align-items:center;justify-content:center;
+  min-width:104px;padding:8px 16px;border:1px solid var(--line);
+  border-radius:999px;color:var(--gold);font-size:.72rem;font-weight:700;letter-spacing:.28em;
+  position:relative
+}
+.eyebrow{color:var(--gold);font-size:.72rem;letter-spacing:.25em;font-weight:700;margin:28px 0 8px}
+h1,h2{font-family:"Playfair Display",Georgia,serif;margin:0}
+h1{font-size:clamp(2.6rem,10vw,5rem);line-height:1}
+.intro{max-width:470px;margin:18px auto 0;color:var(--muted);line-height:1.7;font-size:.92rem}
+.category-nav{
+  position:sticky;top:10px;z-index:5;display:flex;gap:8px;overflow:auto;
+  padding:10px;margin:0 -2px 28px;border:1px solid rgba(255,255,255,.07);
+  background:rgba(22,24,30,.78);backdrop-filter:blur(16px);border-radius:999px;
+  scrollbar-width:none
+}
+.category-nav::-webkit-scrollbar{display:none}
+.category-nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-size:.76rem;font-weight:600;padding:9px 13px;border-radius:999px;transition:.2s}
+.category-nav a:hover,.category-nav a.active{background:var(--gold);color:#17191e}
+.menu-section{padding:28px 0;border-top:1px solid rgba(255,255,255,.08)}
+.section-heading{display:flex;gap:16px;align-items:flex-start;margin-bottom:20px}
+.section-number{color:var(--gold);font-weight:700;font-size:.76rem;letter-spacing:.08em;padding-top:5px}
+.kicker{margin:0 0 4px;color:var(--gold);font-size:.68rem;text-transform:uppercase;letter-spacing:.2em;font-weight:700}
+h2{font-size:clamp(1.65rem,6vw,2.5rem);line-height:1.08}
+.items{display:grid;gap:8px}
+.item{
+  display:flex;justify-content:space-between;align-items:center;gap:20px;
+  padding:17px 18px;background:rgba(48,53,63,.66);border:1px solid rgba(255,255,255,.045);
+  border-radius:16px;transition:transform .2s,border-color .2s,background .2s
+}
+.item:hover{transform:translateY(-2px);border-color:var(--line);background:var(--panel)}
+.item h3{font-size:.94rem;margin:0;font-weight:600}
+.item small{color:var(--muted);font-weight:400;font-size:.75rem}
+.item strong{color:var(--gold);font-size:1rem;white-space:nowrap}
+.item strong span{font-size:.75rem;color:var(--muted)}
+.accent-section{background:linear-gradient(90deg,transparent,rgba(241,160,42,.035),transparent)}
+.service-card,.smoothie-card{
+  padding:20px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(135deg,rgba(241,160,42,.09),rgba(48,53,63,.72))
+}
+.service-card p{margin:0;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;color:var(--muted)}
+.service-card p:last-child{border-bottom:0}
+.service-card b,.service-card span{color:var(--gold)}
+.smoothie-card h3{margin:0 0 6px;font-family:"Playfair Display",Georgia,serif;font-size:1.3rem}
+.smoothie-card p{margin:0;color:var(--gold);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase}
+footer{text-align:center;padding:40px 0 10px;color:var(--muted);font-size:.82rem}
+.footer-line{width:52px;height:2px;background:var(--gold);margin:0 auto 18px}
+footer p{margin:0 0 6px}
+footer a{color:var(--gold);text-decoration:none;font-weight:700}
+@media (min-width:700px){
+  .menu-shell{padding-left:34px;padding-right:34px}
+  .items{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .item:last-child:nth-child(odd){grid-column:1/-1}
+}
+@media (max-width:480px){
+  .menu-shell{padding:0 15px 35px}
+  .hero{padding-top:45px}
+  .category-nav{border-radius:16px}
+  .item{padding:15px}
+}
